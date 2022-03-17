@@ -120,3 +120,21 @@ Isso pode ser testado salvando o código acima em um arquivo chamado `Main.hx` e
 **Conteúdo Relacionado**
 
 - [Tutoriais para iniciantes e exemplos](https://code.haxe.org/category/beginner/) no Haxe Code Cookbook.
+
+#### 1.4 História
+
+O projeto Haxe foi iniciado em 22 de outubro de 2005 pelo desenvolvedor francês **Nicolas Cannasse** como um sucessor do popular compilador ActionScript 2 de código aberto **MTASC** (Motion-Twin Action Script Compiler) e da linguagem inter **MTypes**, que experimentou a aplicação do tipo inferência para uma linguagem orientada a objetos. A paixão de longa data de Nicolas pelo design de linguagens de programação e o surgimento de novas oportunidades para misturar diferentes tecnologias como parte de seu trabalho de desenvolvedor de jogos na **Motion-Twin** levaram à criação de um linguagem totalmente nova.
+
+Sendo escrito `haXe` naquela época, sua versão beta foi lançada em fevereiro de 2006 com os primeiros alvos suportados sendo AVM-bytecode e a própria máquina virtual `Neko` de Nicolas.
+
+Nicolas Cannasse, que continua líder do projeto Haxe até hoje, continou a desenvolver o Haxe com uma visão clara, levando ao lançamento do Haxe 1.0 em maio de 2006. Este primeiro grande lançamento veio com suporte para geração de código JavaScript e já tinha algumas dos recursos que definem o Haxe hoje, com inferência de tipos e subtipagem estrutural.
+
+O Haxe 1 teve vários lançamentos menores ao longo de dois anos, adicionando o destinho Flash AVM2 junto com a ferramenta **haxelib**-tool em agosto de 2006 e o destino ActionScript 3 em março de 2007. Durante esse período, houve um forte foco na melhoria da estabilidade, o que resultou em vários lançamentos de correção de bugs menores.
+
+O Haxe 2.0 foi lançado em julho de 2008 e incluiu PHP target, cortesia de **Franco Ponticelli**. Um esforço semelhante de **Hugh Sanderson** levou à adição do destino C++ em julho de 2009 com o lançamento do Haxe 2.04.
+
+Assim como no Haxe 1, o que se seguiu foram vários meses de lançamentos de estabilidade. Em janeiro de 2011, o Haxe 2.07 foi lançado com o suporte de **macros**. Naquela época, **Bruno Garcia** se juntou à equipe como mantenedor do JavaScript target, que viu grandes melhorias nas versões 2.08 e 2.09 subsequentes.
+
+Após o lançamento de 2.09, **Simon Krajewski** se juntou à equipe e começou o trabalho para Haxe 3. Além disso, Java e o C# de **Cauê Waneck's** chegaram às compilações do Haxe. Foi então decidido fazer um lançamento final do Haxe 2, que aconteceu em julho de 2012 com o lançamento do Haxe 2.10.
+
+No final de 2012, o Haxe 3 foi invertido e a equipe do Haxe Compiler, agora apoiada pela recém-criada **Haxe Foundation**, concentrou-se nesta próxima versão principal. Haxe 3 foi posteriormente lançado em maio de 2013.
