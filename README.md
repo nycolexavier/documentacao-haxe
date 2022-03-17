@@ -8,6 +8,8 @@
 
 ##### 1.2.1 Autores e contribuidores
 
+##### 1.2.2 Licença
+
 #### Hello World
 
 #### História
@@ -89,3 +91,32 @@ A maior parte do conteúdo do conteúdo deste documento foi escrito por Simon Kr
 O Manual Haxe da [Fundação Haxe](https://haxe.org/foundation/) está sob licença da [Creative Commons Attribuition 4.0 Internation License](https://creativecommons.org/licenses/by/4.0/).
 
 Baseado em um trabalho que está em [github.com/HaxeFoundation/HaxeManual](https://github.com/HaxeFoundation/HaxeManual).
+
+#### 1.3 Hello World
+
+O código a seguir imprime "Hello World" após ser compilado e executado:
+
+```
+/**
+    Comentários de várias linhas para a documentação.
+**/
+
+class Main {
+    static public function main():Void {
+        // Comentário de uma única linha
+        trace("Hello World");
+    }
+}
+
+```
+
+Isso pode ser testado salvando o código acima em um arquivo chamado `Main.hx` e invocando o compilador Haxe assim: `haxe --main Main --interp`. Ele gera a seguinte saída: `Main.hx:3 Hello world`. Há várias coisas para aprender com isso:
+
+- Os programas Haxe são salvos em arquivos com extensão `.hx`.
+- O compilador Haxe é uma ferramenta de linha de comando que pode ser invocada com parâmetros como `main Main` e `--interp`.
+- Os programas Haxe têm classes (`Main`, upper-case), que possuem funções (`Main`, lower-case).
+- O nome do arquivo que contém uma classe Haxe é o mesmo que o nome da própria classe (nesse caso `Main.hx`).
+
+**Conteúdo Relacionado**
+
+- [Tutoriais para iniciantes e exemplos](https://code.haxe.org/category/beginner/) no Haxe Code Cookbook.
