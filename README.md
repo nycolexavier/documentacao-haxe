@@ -185,3 +185,13 @@ Os **tipos básicos** são `Bool`, `Float` e `Int`. Eles podem ser facilmente id
 - `1.0`, `0.0`, `-1.0`, `1e10` para `Float`.
 
 Tipos básicos não são **classes** em Haxe. Em vez disso, eles são implementados como tipos abstratos e estão vinculados à manipulação interna do operador do compilador, conforme descrito nas seções a seguir.
+
+##### 2.1.1 Tipos númericos
+
+[Definição: FLoat]()
+*Representa um número de ponto flutuante IEEE de 64 bits de precisão dupla*.
+
+[Definição: Int]()
+*Representa um número inteiro*.
+
+Embora todo `Int` possa ser usado onde é um `Float` é esperado (ou seja, `int` possa ser **atribuído** ou **unificado** com `Float`), o inverso não é verdadeiro: atribuir um `Float` a um `Int` pode causar perda de precisão e, portanto, não é permitido implicitamente.
