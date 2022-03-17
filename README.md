@@ -175,3 +175,13 @@ Descreveremos cada um desses grupos de tipos e como eles se relacionam nos capí
 
 [Definiçaõ: Tipo de Composto]()
 *Um tipo composto é um tipo que possui subtipos. Isso inclui qualquer tipo com parâmetros de tipo e o tipo de função*.
+
+#### 2.1 Tipos Básicos
+
+Os **tipos básicos** são `Bool`, `Float` e `Int`. Eles podem ser facilmente identificados na sintaxe por valores como:
+
+- `true` e `false` para `Bool`,
+- `1`, `0`, `-1` e `0xFF0000` para `Int` e
+- `1.0`, `0.0`, `-1.0`, `1e10` para `Float`.
+
+Tipos básicos não são **classes** em Haxe. Em vez disso, eles são implementados como tipos abstratos e estão vinculados à manipulação interna do operador do compilador, conforme descrito nas seções a seguir.
