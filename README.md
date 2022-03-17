@@ -150,7 +150,7 @@ Em algumas linguagens, essa segurança adicional tem um preço porque os program
 ```
 
 ```
-    MySpecialButton* myButton = new MySpecialButton(); // C++ 
+    MySpecialButton* myButton = new MySpecialButton(); // C++
 ```
 
 Anotações de tipo explícito não são necessárias no Haxe porque o compilador pode **inferir** o tipo:
@@ -174,7 +174,7 @@ O sistema de tipos Haxe conhece sete grupos de tipos:
 Descreveremos cada um desses grupos de tipos e como eles se relacionam nos capítulos seguintes.
 
 [Definiçaõ: Tipo de Composto]()
-*Um tipo composto é um tipo que possui subtipos. Isso inclui qualquer tipo com parâmetros de tipo e o tipo de função*.
+_Um tipo composto é um tipo que possui subtipos. Isso inclui qualquer tipo com parâmetros de tipo e o tipo de função_.
 
 #### 2.1 Tipos Básicos
 
@@ -189,9 +189,19 @@ Tipos básicos não são **classes** em Haxe. Em vez disso, eles são implementa
 ##### 2.1.1 Tipos númericos
 
 [Definição: FLoat]()
-*Representa um número de ponto flutuante IEEE de 64 bits de precisão dupla*.
+_Representa um número de ponto flutuante IEEE de 64 bits de precisão dupla_.
 
 [Definição: Int]()
-*Representa um número inteiro*.
+_Representa um número inteiro_.
 
 Embora todo `Int` possa ser usado onde é um `Float` é esperado (ou seja, `int` possa ser **atribuído** ou **unificado** com `Float`), o inverso não é verdadeiro: atribuir um `Float` a um `Int` pode causar perda de precisão e, portanto, não é permitido implicitamente.
+
+##### 2.1.2 Overflow
+
+Por motivos de desempenho, o compilador Haxe não impõe nenhum comportamento de behavior. The burden of checking for overflows falls to the target platform. Aqui estão algumas notas específicas da plataforma sobre o overflow behavior:
+
+C++, Java, C#, Neko, Flash: inteiros assinados de 32 bits com usual overflow practices.
+
+PHP, JS, Flash 8: Nenhum tipo **Int** nativo, a perda de precisão ocorrerá se um número atingir o limite de flutuação (2*52*)
+
+Como alternativa, as classes **haxe.Int32** e **haxe.Int64** podem ser usadas para garantir o comportamento correto overflow ao custo de cálculos adicionais em determinadas plataformas.
