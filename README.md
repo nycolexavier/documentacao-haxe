@@ -205,3 +205,10 @@ C++, Java, C#, Neko, Flash: inteiros assinados de 32 bits com usual overflow pra
 PHP, JS, Flash 8: Nenhum tipo **Int** nativo, a perda de precisão ocorrerá se um número atingir o limite de flutuação (2*52*)
 
 Como alternativa, as classes **haxe.Int32** e **haxe.Int64** podem ser usadas para garantir o comportamento correto overflow ao custo de cálculos adicionais em determinadas plataformas.
+
+##### 2.1.3 Bool
+
+[Definição: Bool]()
+\*Representa um valor que pode ser **verdadeiro** ou **falso\***
+
+Valores do tipo `Bool` são uma ocorrência comum em **condições** como `if` e `while`.
