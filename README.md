@@ -5,6 +5,7 @@
 #### 1.1 O que é Haxe?
 
 #### 1.2 Sobre esse documento
+
 ##### 1.2.1 Autores e contribuidores
 
 #### Hello World
@@ -75,10 +76,16 @@ Essa é a curiosidade.
 
 ###### 1.2.1 Autores e contribuidores
 
-A maior parte do conteúdo do conteúdo deste documento foi escrito por Simon Krajewski enquanto trabalhava para a Fundação Haxe. Gostaríamos de agradecer a essas pessoas por suas contribuições: 
+A maior parte do conteúdo do conteúdo deste documento foi escrito por Simon Krajewski enquanto trabalhava para a Fundação Haxe. Gostaríamos de agradecer a essas pessoas por suas contribuições:
 
 - Dan Korostelev: Conteúdo adicional e edição
 - Caleb Harper: Conteúdo adicional e edição
 - Josefiene Pertosa: Edição
 - Miha Lunar: Edição
 - Nicolas Cannasse: Criador do Haxe
+
+###### 1.2.2 Licença
+
+O Manual Haxe da [Fundação Haxe](https://haxe.org/foundation/) está sob licença da [Creative Commons Attribuition 4.0 Internation License](https://creativecommons.org/licenses/by/4.0/).
+
+Baseado em um trabalho que está em [github.com/HaxeFoundation/HaxeManual](https://github.com/HaxeFoundation/HaxeManual).
