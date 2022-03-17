@@ -138,3 +138,40 @@ Assim como no Haxe 1, o que se seguiu foram vários meses de lançamentos de est
 Após o lançamento de 2.09, **Simon Krajewski** se juntou à equipe e começou o trabalho para Haxe 3. Além disso, Java e o C# de **Cauê Waneck's** chegaram às compilações do Haxe. Foi então decidido fazer um lançamento final do Haxe 2, que aconteceu em julho de 2012 com o lançamento do Haxe 2.10.
 
 No final de 2012, o Haxe 3 foi invertido e a equipe do Haxe Compiler, agora apoiada pela recém-criada **Haxe Foundation**, concentrou-se nesta próxima versão principal. Haxe 3 foi posteriormente lançado em maio de 2013.
+
+### 2. Types
+
+The Haxe Compiler employs a rich type system which helps detect type-related errors in a program at compile-time. Um erro de tipo é uma operação inválida em um determinado tipo, como dividir por uma String, tentar acessar um campo de Integer ou chamar uma função com poucos (ou muitos) argumentos.
+
+Em algumas linguagens, essa segurança adicional tem um preço porque os programadores são forçados a atribuir tipos explicitamente a construções sintáticas:
+
+```
+    var myButton:MySpecialButton = new MySpecialButton(); // As3
+```
+
+```
+    MySpecialButton* myButton = new MySpecialButton(); // C++ 
+```
+
+Anotações de tipo explícito não são necessárias no Haxe porque o compilador pode **inferir** o tipo:
+
+```
+    var myButton = new MySpecialButton(); // Haxe
+```
+
+Exploraremos a inferência de tipos em detalhes posteriormente em [Inferência de tipos](). Por agora, basta dizer que a variável `myButton` no código acima é conhecida por ser uma **instância da classe** ``MySpecialButton`.
+
+O sistema de tipos Haxe conhece sete grupos de tipos:
+
+- **Instância de classe**: um objeto de uma determinada classe ou interface
+- **Enum instance**: um valor de uma enumeração Haxe
+- **Structure**: an anonymous structure, i.e. a collection of named fields
+- **Função**: um tipo composto de vários argumentos e um retorno
+- **Dynamic**: um tipo coringa compatível com qualquer outro tipo
+- **Abstract**: um tipo de tempo de compilação que é representado por um tipo diferente em tempo de execução
+- **Monomorph**: um tipo desconhecido que mais tarde pode se tornar um tipo diferente
+
+Descreveremos cada um desses grupos de tipos e como eles se relacionam nos capítulos seguintes.
+
+[Definiçaõ: Tipo de Composto]()
+*Um tipo composto é um tipo que possui subtipos. Isso inclui qualquer tipo com parâmetros de tipo e o tipo de função*.
