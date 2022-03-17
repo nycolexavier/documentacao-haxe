@@ -209,6 +209,33 @@ Como alternativa, as classes **haxe.Int32** e **haxe.Int64** podem ser usadas pa
 ##### 2.1.3 Bool
 
 [Definição: Bool]()
-\*Representa um valor que pode ser **verdadeiro** ou **falso\***
+_Representa um valor que pode ser **verdadeiro** ou_ **falso**
 
 Valores do tipo `Bool` são uma ocorrência comum em **condições** como `if` e `while`.
+
+##### 2.1.4 Void
+
+[Definição: Void]()
+_Indica a ausência de um tipo. É usado para expressar que algo (geralmente uma função) não tem valor_.
+
+`Void` é um caso especial no sistema de tipos porque não é realmente um tipo. É usado para expressar a ausência de um tipo, que se aplica principalmente a argumentos de função e tipos de retorno. Já vimos `Void` no exemplo inicial "Hello World":
+
+```
+/**
+    Comentários de várias linhas para documentação.
+**/
+class Main {
+    static public function main():Void {
+        // Comentário de linha única
+        trace("Hello World");
+    }
+}
+```
+
+O tipo de função será explorado em detalhes na seção [Tipo de Função](), mas uma visualização rápida pode ajudar: o tipo de função `main` no exemplo acima é `Void -> Void`, que é lido como "não tem argumentos e não retorna nada". O Haxe não permite campos e variáveis do tipo `Void` e reclamará se tal declaração for feita: 
+
+```
+    // Argumentos e variáveis do tipo Void não são permitidos
+    var x:Void;
+```
+ 
