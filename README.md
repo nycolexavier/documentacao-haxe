@@ -232,25 +232,25 @@ class Main {
 }
 ```
 
-O tipo de função será explorado em detalhes na seção [Tipo de Função](), mas uma visualização rápida pode ajudar: o tipo de função `main` no exemplo acima é `Void -> Void`, que é lido como "não tem argumentos e não retorna nada". O Haxe não permite campos e variáveis do tipo `Void` e reclamará se tal declaração for feita: 
+O tipo de função será explorado em detalhes na seção [Tipo de Função](), mas uma visualização rápida pode ajudar: o tipo de função `main` no exemplo acima é `Void -> Void`, que é lido como "não tem argumentos e não retorna nada". O Haxe não permite campos e variáveis do tipo `Void` e reclamará se tal declaração for feita:
 
 ```
     // Argumentos e variáveis do tipo Void não são permitidos
     var x:Void;
 ```
- 
+
 ##### 2.1.5 Nullability
 
 [Definição: nullable]()
-*Um tipo em Haxe é considerado **nullable** se `null` for um valor válido para ele*.
+_Um tipo em Haxe é considerado **nullable** se `null` for um valor válido para ele_.
 
 É comum que as linguagens de programação tenham uma definição única e limpa para nulidade. No entanto, Haxe precisa encontrar um meio-termo a esse respeito devido à natureza dos idiomas de destino do Haxe; enquanto alguns deles permitem e, de fato, o padrão é `null` para qualquer coisa, outros nem permitem `null` para certos tipos. Isso exige a distinção entre dois tipos de línguas de destino:
 
 [Definição: Static target]()
-*Destinos estáticos empregam seu próprio sistema de tipo em que `null` não é um valor válido para tipos básicos. Isso vale para os destinos Flash, C++, Java e C#*.
+_Destinos estáticos empregam seu próprio sistema de tipo em que `null` não é um valor válido para tipos básicos. Isso vale para os destinos Flash, C++, Java e C#_.
 
 [Definição: Dynamic target]()
-*Destinos dinâmicos são mais tolerantes com seus tipos e permitem valores `null` para tipos básicos. Isso se aplica aos destinos JavaScript, PHP, Neko e Flash 6-8*.
+_Destinos dinâmicos são mais tolerantes com seus tipos e permitem valores `null` para tipos básicos. Isso se aplica aos destinos JavaScript, PHP, Neko e Flash 6-8_.
 
 Não há com o que se preocupar ao trabalhar com `null` em destinos dinâmicos; no entano, os estáticos podem exigir alguma reflexão. Para iniciantes, os tipos básicos são inicializados com seus valores padrão.
 
@@ -294,3 +294,20 @@ If a null value is "hidden" in Null<T> or Dynamic and assigned to a basic type, 
     trace(a); // 0 em plataformas estáticas
 
 ```
+
+##### 2.1.6 Argumentos Opcionais e Nulidade
+
+Optional arguments must be accounted for when considering nullability; a separation between native optional arguments which are not nullable and Haxe-specific optional arguments which may be needs to be defined. This distinction is made using the question-mark optional argument:
+
+```
+    // x é um Int nativo (não anulável)
+    function foo(x : Int = 0) {}
+    // y é Null<Int> (anulável)
+    function bar( ?y : Int) {}
+    // z também é Null<Int>
+    function opt( ?z : Int = -1) {}
+```
+
+[Definição: Argumento vs. Parâmetro]()
+
+_Algumas outras linguagens de programação, **argumento** e **parâmetro** são usados alternadamente. No Haxe, o **argumento** é usado quando se refere a métodos e o **parâmetro** se refere ao [Tipo de Parâmetro]()_
