@@ -239,3 +239,58 @@ O tipo de função será explorado em detalhes na seção [Tipo de Função](), 
     var x:Void;
 ```
  
+##### 2.1.5 Nullability
+
+[Definição: nullable]()
+*Um tipo em Haxe é considerado **nullable** se `null` for um valor válido para ele*.
+
+É comum que as linguagens de programação tenham uma definição única e limpa para nulidade. No entanto, Haxe precisa encontrar um meio-termo a esse respeito devido à natureza dos idiomas de destino do Haxe; enquanto alguns deles permitem e, de fato, o padrão é `null` para qualquer coisa, outros nem permitem `null` para certos tipos. Isso exige a distinção entre dois tipos de línguas de destino:
+
+[Definição: Static target]()
+*Destinos estáticos empregam seu próprio sistema de tipo em que `null` não é um valor válido para tipos básicos. Isso vale para os destinos Flash, C++, Java e C#*.
+
+[Definição: Dynamic target]()
+*Destinos dinâmicos são mais tolerantes com seus tipos e permitem valores `null` para tipos básicos. Isso se aplica aos destinos JavaScript, PHP, Neko e Flash 6-8*.
+
+Não há com o que se preocupar ao trabalhar com `null` em destinos dinâmicos; no entano, os estáticos podem exigir alguma reflexão. Para iniciantes, os tipos básicos são inicializados com seus valores padrão.
+
+[Definição: Valores padrão]()
+
+Os tipos básicos têm os seguintes valores padrão em destinos estáticos:
+
+- `Int`: 0
+- `Float`: `NaN` no Flash, `0.0` em outros destinos estáticos
+- `Bool`: `false`
+
+Como consequência, o compilador Haxe não permite a atribuição de `null` a um tipo básico em destinos estáticos. Para conseguir isso, o tipo básico deve ser encapsulado como `Null<T>`:
+
+```
+    // erro em plataformas estáticas
+
+    var a:Int = null;
+    var b:Null<Int> = null; // permitida
+```
+
+Da mesma forma, tipos básicos não podem ser comparados c `null`, a menos que sejam encapsulados:
+
+```
+    var a : Int = 0;
+    // erro em plataformas estáticas
+    if( a == null ) { ... }
+    var b : Null<Int> = 0;
+    if( b != null ) { ... } // permitida
+```
+
+Essa restrição se estende a todas as situações em que a unificação é realizada.
+
+[Definição: `Null<T>`]()
+On static targets the types Null<Int>, Null<Float> and Null<Bool> can be used to allow null as a value. On dynamic targets this has no effect. Null<T> can also be used with other types in order to document that null is a permitted value.
+
+If a null value is "hidden" in Null<T> or Dynamic and assigned to a basic type, the default value is used:
+
+```
+    var n : Null<Int> = null;
+    var a : Int = n;
+    trace(a); // 0 em plataformas estáticas
+
+```
